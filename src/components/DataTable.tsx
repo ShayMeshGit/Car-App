@@ -56,13 +56,25 @@ export const DataTable = ({ data }: any) => {
                 <TableCell component="th" scope="row">
                   {data.mispar_rechev}
                 </TableCell>
-                <TableCell align="center">{data.tozeret_nm}</TableCell>
-                <TableCell align="center">{data.shnat_yitzur}</TableCell>
-                <TableCell align="center">{data.zmig_kidmi}</TableCell>
-                <TableCell align="center">{data.zmig_ahori}</TableCell>
-                <TableCell align="center">{data.sug_delek_nm}</TableCell>
                 <TableCell align="center">
-                  {data.ramat_eivzur_betihuty}
+                  {data.tozeret_nm ? data.tozeret_nm : "-"}
+                </TableCell>
+                <TableCell align="center">
+                  {data.shnat_yitzur ? data.shnat_yitzur : "-"}
+                </TableCell>
+                <TableCell align="center">
+                  {data.zmig_kidmi ? data.zmig_kidmi : "-"}
+                </TableCell>
+                <TableCell align="center">
+                  {data.zmig_ahori ? data.zmig_ahori : "-"}
+                </TableCell>
+                <TableCell align="center">
+                  {data.sug_delek_nm ? data.sug_delek_nm : "-"}
+                </TableCell>
+                <TableCell align="center">
+                  {data.ramat_eivzur_betihuty
+                    ? data.ramat_eivzur_betihuty
+                    : "-"}
                 </TableCell>
                 {zihum.map((z) => {
                   if (z.num === data.kvutzat_zihum) {
@@ -70,9 +82,9 @@ export const DataTable = ({ data }: any) => {
                       <TableCell
                         key={data._id}
                         align="center"
-                        style={{ backgroundColor: z.color }}
+                        style={{ backgroundColor: z.color ? z.color : "#fff" }}
                       >
-                        {z.num}
+                        {z.num ? z.num : "-"}
                       </TableCell>
                     );
                   }
